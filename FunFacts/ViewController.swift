@@ -11,10 +11,11 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var funFactLabel: UILabel!
+    let factModel = FactModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        funFactLabel.text = "Other thing"
+        funFactLabel.text = factModel.facts[0]
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,7 +24,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func showFunFact() {
-        funFactLabel.text = "Another thing"
+        funFactLabel.text = factModel.facts[1]
     }
  
 }
