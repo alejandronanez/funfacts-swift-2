@@ -5,6 +5,7 @@
 //  Created by Alejo Nanez Ortiz on 7/28/16.
 //  Copyright © 2016 Alejandro Nanez. All rights reserved.
 //
+import GameKit
 
 struct FactModel {
     let facts = [
@@ -19,4 +20,10 @@ struct FactModel {
         "On average, it takes 66 days to form a new habit.",
         "Mammoths still walked the Earth when the Great Pyramid was being built."
     ]
+    
+    func getRandomFact() -> String {
+        let randomNumber = GKRandomSource.sharedRandom().nextIntWithUpperBound(facts.count)
+        
+        return facts[randomNumber]
+    }
 }
